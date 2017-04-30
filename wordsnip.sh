@@ -27,8 +27,8 @@ if [ $stage -le 2 ]; then
 fi
 
 if [ $stage -le 3 ]; then
-	# rm -rf words_new
-	# mkdir words_new
+	rm -rf words_new
+	mkdir words_new
 	find "$1/" -iname "*.wav" | while read audio;do
 	# for audio in `ls "$1"/*.wav`;do
 		echo "Splittting file $audio"
@@ -37,10 +37,7 @@ if [ $stage -le 3 ]; then
 		# uttid="${uttid_path##*/}"
 		if [ ! -f $PWD/words_new/A/"$uttid".wav ];then
 			awk -v var="$uttid" '$1 == var { print $0 }' utterance.ctm > this_utterance
-			# rm -rf "$1"/words
-			# mkdir "$1"/words
 			./phone-to-wav.sh "$audio" this_utterance ./data/lang/phones/word_boundary.int words_new "$2" "$standard_words"
-			# rm this_utterance
 		fi
 	done
 fi

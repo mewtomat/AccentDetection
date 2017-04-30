@@ -1,0 +1,979 @@
+# compile-train-graphs --read-disambig-syms=./data/lang/phones/disambig.int ./alignments/tree ./alignments/final.mdl ./data/lang/L.fst "ark:utils/sym2int.pl --map-oov 2 -f 2- ./data/lang/words.txt GMU_Archive//split1/1/text|" ark:- | gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=40 --retry-beam=100 --careful=false "gmm-boost-silence --boost=1.0 1 ./alignments/final.mdl - |" ark:- "ark,s,cs:apply-cmvn  --utt2spk=ark:GMU_Archive//split1/1/utt2spk scp:GMU_Archive//split1/1/cmvn.scp scp:GMU_Archive//split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark,t:|gzip -c >./alignments/ali.1.gz" 
+# Started at Sat Apr 29 19:30:13 IST 2017
+#
+compile-train-graphs --read-disambig-syms=./data/lang/phones/disambig.int ./alignments/tree ./alignments/final.mdl ./data/lang/L.fst 'ark:utils/sym2int.pl --map-oov 2 -f 2- ./data/lang/words.txt GMU_Archive//split1/1/text|' ark:- 
+gmm-align-compiled --transition-scale=1.0 --acoustic-scale=0.1 --self-loop-scale=0.1 --beam=40 --retry-beam=100 --careful=false 'gmm-boost-silence --boost=1.0 1 ./alignments/final.mdl - |' ark:- 'ark,s,cs:apply-cmvn  --utt2spk=ark:GMU_Archive//split1/1/utt2spk scp:GMU_Archive//split1/1/cmvn.scp scp:GMU_Archive//split1/1/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark,t:|gzip -c >./alignments/ali.1.gz' 
+gmm-boost-silence --boost=1.0 1 ./alignments/final.mdl - 
+WARNING (gmm-boost-silence[5.1.38~1-3fec9]:main():gmm-boost-silence.cc:82) The pdfs for the silence phones may be shared by other phones (note: this probably does not matter.)
+LOG (gmm-boost-silence[5.1.38~1-3fec9]:main():gmm-boost-silence.cc:93) Boosted weights for 5 pdfs, by factor of 1
+LOG (gmm-boost-silence[5.1.38~1-3fec9]:main():gmm-boost-silence.cc:103) Wrote model to -
+apply-cmvn --utt2spk=ark:GMU_Archive//split1/1/utt2spk scp:GMU_Archive//split1/1/cmvn.scp scp:GMU_Archive//split1/1/feats.scp ark:- 
+add-deltas ark:- ark:- 
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:main():gmm-align-compiled.cc:98) No features for utterance (Karan
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:main():gmm-align-compiled.cc:98) No features for utterance 2017-04-29)
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:main():gmm-align-compiled.cc:98) No features for utterance Vaidya's
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance afrikaans2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance afrikaans3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance afrikaans4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance afrikaans5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance albanian3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance albanian4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance albanian5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file albanian5, len = 2184
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance amazigh1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance amharic15 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance amharic16 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance amharic17 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance amharic4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file amharic4, len = 4379
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance amharic5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file amharic5, len = 2613
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance amharic6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file amharic6, len = 2477
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance amharic7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance amharic8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file amharic8, len = 4718
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic103 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic11 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file arabic11, len = 3255
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic12 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file arabic12, len = 3971
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic16 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file arabic16, len = 2028
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic17 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file arabic17, len = 2250
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic18 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file arabic18, len = 2840
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic20 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file arabic20, len = 2662
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic21 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic22 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file arabic22, len = 2848
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic28 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file arabic28, len = 8514
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic29 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic30 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file arabic30, len = 2344
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic31 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic32 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file arabic32, len = 2775
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic33 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic35 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic37 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file arabic37, len = 2075
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic41 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic48 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic53 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic54 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic58 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic59 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file arabic59, len = 2548
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file arabic6, len = 2634
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic60 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic61 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic72 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic74 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic76 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance arabic86 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance armenian2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file armenian2, len = 2694
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance armenian3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file armenian3, len = 3436
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance armenian6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance armenian7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance azerbaijani1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file azerbaijani1, len = 2926
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance azerbaijani3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bai1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file bai1, len = 6082
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance balantaganja1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file balantaganja1, len = 4010
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bambara3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bambara4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file bambara4, len = 3274
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bari1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance basque2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file basque2, len = 3326
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bavarian1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file bavarian1, len = 2391
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance belarusan1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance belarusan2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file belarusan2, len = 2540
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bengali19 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file bengali19, len = 2242
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bengali8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bosnian5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bosnian9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bulgarian10 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file bulgarian10, len = 2511
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bulgarian11 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bulgarian13 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bulgarian14 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bulgarian16 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bulgarian4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file bulgarian4, len = 2861
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bulgarian5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance bulgarian6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file bulgarian6, len = 1915
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance burmese1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file burmese1, len = 3310
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance burmese2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file burmese2, len = 2830
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance cameroon_creole_english1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance cantonese13 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file cantonese13, len = 2819
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance cantonese19 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance cantonese2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file cantonese2, len = 4232
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance cantonese23 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance cantonese27 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance cantonese3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance cantonese4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance cantonese5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance cantonese7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance cantonese9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file cantonese9, len = 2796
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance catalan1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance catalan2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file catalan2, len = 2096
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance catalan3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file catalan3, len = 2312
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance catalan4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file catalan4, len = 1858
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance chaldean1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file chaldean1, len = 2430
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:main():gmm-align-compiled.cc:98) No features for utterance conflicted
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:main():gmm-align-compiled.cc:98) No features for utterance copy
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance croatian2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance croatian3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance croatian4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance croatian8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance czech3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file czech3, len = 2224
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance czech4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file czech4, len = 2456
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance czech6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file czech6, len = 2326
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance danish2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file danish2, len = 2396
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance danish3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance danish9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dari2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch11 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch15 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file dutch15, len = 2414
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file dutch3, len = 2169
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch32 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch40 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch41 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch42 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file dutch42, len = 2200
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch43 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch45 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch48 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch50 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file dutch6, len = 2657
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance dutch9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance edo1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english100 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english100, len = 1876
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english102 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english102, len = 2190
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english105 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english108 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english110 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english110, len = 2681
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english111 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english112 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english115 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english118 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english120 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english121 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english124 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english124, len = 1889
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english125 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english127 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english127, len = 1881
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english129 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english129, len = 1892
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english13 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english131 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english135 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english136 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english137 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english139 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english14 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english141 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english141, len = 1894
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english142 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english144 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english144, len = 2130
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english145 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english148 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english148, len = 2056
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english151 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english152 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english155 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english155, len = 2075
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english157 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english159 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english159, len = 2211
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english16 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english164 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english167 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english169 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english17 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english171 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english173 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english174 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english174, len = 2710
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english175 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english18 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english18, len = 2085
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english180 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english180, len = 1957
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english181 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english188 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english189 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english19 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english190 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english190, len = 1853
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english191 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english191, len = 1902
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english193 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english194 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english194, len = 2122
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english195 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english196 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english196, len = 2459
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english198 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english199 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english202 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english212 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english213 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english213, len = 1884
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english214 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english216 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english217 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english217, len = 2184
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english220 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english221 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english221, len = 2239
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english222 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english223 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english225 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english226 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english23 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english231 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english231, len = 1845
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english233 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english234 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english236 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english236, len = 2064
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english238 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english24 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english240 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english243 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english247 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english249 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english25 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english252 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english253 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english254 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english258 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english258, len = 2885
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english259 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english26 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english261 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english262 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english262, len = 2738
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english264 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english264, len = 1913
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english265 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english265, len = 1952
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english267 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english267, len = 2511
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english268 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english270 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english272 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english272, len = 1902
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english273 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english28 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english28, len = 2639
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english281 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english285 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english289 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english289, len = 2059
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english29 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english290 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english290, len = 2145
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english291 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english292 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english297 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english297, len = 1884
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english298 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english299 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english301 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english302 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english304 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english305 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english306 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english307 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english308 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english308, len = 2239
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english311 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english312 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english312, len = 1970
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english314 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english315 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english315, len = 2286
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english316 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english318 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english321 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english322 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english322, len = 1913
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english325 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english326 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english326, len = 1968
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english338 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english343 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english343, len = 2195
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english345 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english345, len = 2124
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english349 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english350 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english351 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english351, len = 2203
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english352 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english352, len = 2864
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english353 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english355 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english356 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english358 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english36 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english36, len = 2101
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english362 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english365 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english367 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english367, len = 2156
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english368 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english368, len = 2495
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english369 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english372 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english373 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english373, len = 2038
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english375 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english376 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english378 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english379 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english379, len = 2140
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english38 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english380 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english380, len = 2051
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english381 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english382 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english384 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english384, len = 2503
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english385 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english387 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english392 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english394 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english395 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english395, len = 2231
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english399 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english40 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english407 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english408 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english410 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english411 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english412 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english414 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english415 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english415, len = 2093
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english418 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english419 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english421 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english421, len = 2132
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english422 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english424 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english424, len = 2375
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english425 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english425, len = 1905
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english43 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english430 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english431 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english434 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english434, len = 1936
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english437 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english438 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english438, len = 2806
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english44 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english44, len = 2427
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english441 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english442 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english443 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english443, len = 2451
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english444 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english444, len = 2211
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english447 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english449 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english449, len = 2245
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english45 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english45, len = 3141
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english450 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english450, len = 2349
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english457 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english459 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english46 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english461 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english462 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english464 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english465 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english467 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english468 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english468, len = 2276
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english469 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english470 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english470, len = 2067
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english472 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english473 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english475 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english478 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english479 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english480 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english483 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english484 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english485 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english485, len = 2493
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english486 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english487 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english49 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english490 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english490, len = 2137
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english493 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english494 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english497 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english498 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english500 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english502 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english502, len = 2124
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english503 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english504 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english514 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english517 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english518 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english52 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english52, len = 2516
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english525 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english525, len = 2268
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english542 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english545 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english546 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english550 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english551 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english553 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english555 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english558 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english558, len = 1926
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english56 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english566 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english566, len = 2020
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english569 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english57 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english57, len = 2542
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english571 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english572 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english574 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english575 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english578 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english580 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english580, len = 2271
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english582 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english583 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english584 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english584, len = 2375
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english60 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english60, len = 2169
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english61 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english62 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english62, len = 2231
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english63 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english65 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english65, len = 2064
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english66 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english66, len = 2088
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english67 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english68 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english69 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english70 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english73 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english74 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english78 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english79 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english79, len = 2613
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english8, len = 2030
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english81 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english84 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english84, len = 2263
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english85 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english85, len = 1900
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english86 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english86, len = 2216
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english87 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english88 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english88, len = 1991
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english90 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english91 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english95 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english96 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english97 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file english97, len = 1811
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance english99 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance estonian1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance estonian2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance faroese1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance farsi1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance farsi12 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file farsi12, len = 2804
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance farsi21 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance farsi7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance fataluku1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file fataluku1, len = 3070
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance fijian1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file fijian1, len = 1991
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance fijian2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance finnish2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance finnish5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file finnish5, len = 2563
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french10 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french11 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french15 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french17 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french19 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french25 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french28 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french31 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french37 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french38 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french41 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file french41, len = 1973
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french45 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french46 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french47 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french51 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance french57 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance fulfuldeadamawa1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file fulfuldeadamawa1, len = 2401
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance ga1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance ga4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file ga4, len = 1957
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance ganda2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance garifuna2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance gedeo1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance georgian3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file georgian3, len = 3101
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance georgian4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file georgian4, len = 2527
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german10 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file german10, len = 2153
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german14 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german15 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german16 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german20 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german23 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german24 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file german24, len = 2103
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german27 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german28 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file german28, len = 1926
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german31 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file german31, len = 2853
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german33 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file german33, len = 2012
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german34 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance german8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance greek14 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance gujarati7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance gusii2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hausa2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hausa6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hausa7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hebrew2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hebrew5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hebrew7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hebrew9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file hebrew9, len = 2284
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hindi1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hindi11 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hindi16 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hindi2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file hindi2, len = 2487
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hindi23 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hindi24 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file hindi24, len = 2127
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hindi25 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file hindi25, len = 2430
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hindi26 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file hindi26, len = 1936
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hindi28 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file hindi28, len = 2474
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hindi6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hindi8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file hindi8, len = 2028
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hindi9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hmong2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance hungarian4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance ibibio1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance ibibio3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance icelandic1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance icelandic2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance igbo2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance igbo3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance indonesian1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance indonesian2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance indonesian6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance irish1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian10 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian11 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file italian11, len = 2158
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian12 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian13 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian14 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian16 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian19 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file italian19, len = 2357
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian20 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian25 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file italian25, len = 2012
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian28 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian30 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance italian7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance jamaican_creole_english1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance japanese12 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance japanese14 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance japanese20 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance japanese21 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance kalanga1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance kambaata1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance kannada2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance kannada5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file kannada5, len = 2122
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance kannada6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file kannada6, len = 2284
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance kazakh1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance kazakh2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance kazakh3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file kazakh3, len = 2668
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance kikongo1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance kikuyu1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance kiswahili7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance konkani1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance korean12 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance korean18 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance korean24 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance korean29 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance korean43 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance korean45 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance korean47 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance korean51 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance korean62 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance korean63 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance korean7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance korean9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file korean9, len = 2258
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance krio2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance krio4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance kurdish5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance kurdish7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance latvian3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance liberianpidginenglish1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance macedonian2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance macedonian26 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance macedonian3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance malay5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file malay5, len = 2150
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance malayalam2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin12 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin19 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin29 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file mandarin29, len = 1986
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin34 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file mandarin34, len = 2749
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin40 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file mandarin40, len = 2425
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin48 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin49 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin50 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file mandarin50, len = 3990
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin51 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin57 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file mandarin57, len = 2341
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin62 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin63 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin65 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file mandarin65, len = 1983
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin67 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file mandarin7, len = 992
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin76 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file mandarin76, len = 2871
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandarin8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandingo1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mandinka1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mankanya1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance marathi2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance marathi3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mauritian3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file mauritian3, len = 2785
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mende3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file mende3, len = 3117
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mizo1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance mongolian5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance nama1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance nandi1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance nepali3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance nepali4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance nepali5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance nepali6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance nepali7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance nepali8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance nepali9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance ngemba1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance norwegian3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance norwegian6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance oriya1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance oromo3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance pashto8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish11 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish12 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish13 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish14 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish16 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish19 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish30 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file polish30, len = 2292
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish32 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish33 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file polish33, len = 2323
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish36 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file polish8, len = 2041
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance polish9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese12 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese13 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese19 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese21 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese30 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese31 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese32 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese33 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese40 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese45 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file portuguese45, len = 1926
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese46 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese47 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file portuguese47, len = 2720
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese48 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance portuguese8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance pulaar3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance punjabi11 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance punjabi3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance punjabi6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance punjabi7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file punjabi7, len = 1962
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance romanian11 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file romanian11, len = 2605
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance romanian13 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance romanian19 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance romanian21 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance romanian6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance romanian7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance romanian9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance rotuman1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance rotuman2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian13 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file russian13, len = 2649
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian16 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian17 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian18 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian19 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian22 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file russian22, len = 2208
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian27 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian30 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file russian30, len = 2532
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian31 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file russian31, len = 1897
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian33 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian36 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian38 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian43 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance russian6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance rwanda1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance sa'a1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance serbian10 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance serbian13 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance serbian18 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file serbian18, len = 2365
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance serbian4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance serbian5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance serbian6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance serbian8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance serbian9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance serer1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance sesotho1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance shilluk1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance shona2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance sindhi1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance slovenian1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance somali2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance somali5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance somali6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish104 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish109 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish110 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish114 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file spanish114, len = 1913
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish116 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish124 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish125 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish13 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish130 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish136 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:main():gmm-align-compiled.cc:98) No features for utterance spanish150
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish154 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish16 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish160 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file spanish160, len = 2028
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish170 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish25 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish27 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish29 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish32 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish33 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish34 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file spanish34, len = 2294
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish40 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish41 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file spanish41, len = 1866
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish46 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish48 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish50 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish51 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish53 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish55 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish56 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish57 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish58 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish59 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish64 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish68 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file spanish68, len = 2250
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish71 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish72 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish73 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file spanish73, len = 2093
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish74 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file spanish74, len = 2182
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish77 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish86 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance spanish88 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance swedish11 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file swedish11, len = 2265
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance swedish15 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance swedish17 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance swedish18 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance swedish19 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file swedish19, len = 2218
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance swedish2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance swedish4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance swedish5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance swedish6 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file swedish6, len = 1798
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance swissgerman1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance swissgerman5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance synthesized1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance synthesized4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance tagalog1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance tagalog17 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance tagalog9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance taiwanese9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance tajiki1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance tajiki2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance tamil1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file tamil1, len = 26
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance telugu2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file telugu2, len = 3018
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance telugu7 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance teochew1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance tetundili1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance thai10 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance thai11 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance thai16 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance tigrigna5 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance tokpisin1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance tswana1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance turkish10 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance turkish12 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance turkish14 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance turkish15 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file turkish15, len = 1889
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance turkish16 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance turkish18 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance turkish22 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file turkish22, len = 2122
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance turkish25 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance turkish35 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance turkish9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file turkish9, len = 2043
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance turkmen1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance ukrainian1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance ukrainian10 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file ukrainian10, len = 2801
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance ukrainian4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance ukrainian8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance ukrainian9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance urdu10 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance urdu11 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file urdu11, len = 1827
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance urdu14 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance urdu15 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance urdu3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance urdu4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance uzbek3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file uzbek3, len = 2320
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance vietnamese13 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file vietnamese13, len = 2380
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance vietnamese22 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance vietnamese8 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance vietnamese9 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance vlaams1 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:475) Did not successfully decode file vlaams1, len = 2595
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance wolof4 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance yiddish2 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance yiddish3 with beam 100
+WARNING (gmm-align-compiled[5.1.38~1-3fec9]:AlignUtteranceWrapper():decoder-wrappers.cc:466) Retrying utterance yoruba5 with beam 100
+LOG (apply-cmvn[5.1.38~1-3fec9]:main():apply-cmvn.cc:146) Applied cepstral mean normalization to 2232 utterances, errors on 0
+LOG (compile-train-graphs[5.1.38~1-3fec9]:main():compile-train-graphs.cc:145) compile-train-graphs: succeeded for 2238 graphs, failed for 0
+LOG (gmm-align-compiled[5.1.38~1-3fec9]:main():gmm-align-compiled.cc:129) Overall log-likelihood per frame is -103.495 over 5773451 frames.
+LOG (gmm-align-compiled[5.1.38~1-3fec9]:main():gmm-align-compiled.cc:131) Retried 751 out of 2238 utterances.
+LOG (gmm-align-compiled[5.1.38~1-3fec9]:main():gmm-align-compiled.cc:133) Done 2028, errors on 210
+# Accounting: time=4718 threads=1
+# Ended (code 0) at Sat Apr 29 20:48:51 IST 2017, elapsed time 4718 seconds

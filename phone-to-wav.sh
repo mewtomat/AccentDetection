@@ -43,4 +43,4 @@ do
 	wordNum=$((wordNum+1))
 done < tmp2
 
-# rm tmp tmp2
+rm tmp tmp2
